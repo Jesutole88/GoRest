@@ -6,6 +6,8 @@ Para habilitar esta app, seguir los siguinetes paso.
 * Clonar el repositorio.
 * Por la terminar acceder al directorio # cd GoRest-app
 * Por la terminal ejecutar # composer install
+* Copiar archivo .env.example y renombrar a .env
+* Por la terminal ejecutar # php artisan key:generate
 * Por la termninal ejecutar # php artisan serve 
 * Ingresar al navegador http://127.0.0.1:8000/
 
