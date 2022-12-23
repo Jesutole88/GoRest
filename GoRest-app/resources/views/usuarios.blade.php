@@ -19,7 +19,7 @@
                 <td>{{$user['status']}}</td>
                 
                 <td>
-                    <a href="{{ route ('usuario.update',$user['id']) }}">Modificar</a>
+                    <a href="{{ route ('usuario.modificar',$user['id']) }}">Modificar</a>
                 </td>
                 <td>
                     <a href="{{ route ('usuario.delete',$user['id']) }}">Eliminar</a>

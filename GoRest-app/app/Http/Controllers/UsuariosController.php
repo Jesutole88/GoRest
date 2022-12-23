@@ -80,10 +80,48 @@ class UsuariosController extends Controller
 
         }
         return redirect()->route('usuarios.index');
+    }
+
+    public function modificar($idUser){
+
+        try{
+
+            $url = env('URL_SERVER_API','https://gorest.co.in/');
+            $response = Http::get($url.'/users/'.$idUser);
+            $data = $response->json();
+            return view('usuario_modificar', compact('data'));
+
+
+        } catch (Exception $e) {
+
+            return $this->error($e);
+
+        }
+
 
     }
 
-    public function update($idUser){
-        dd($idUser);
+
+    public function update(Request $request){
+
+        try{
+
+            $url = env('URL_SERVER_API','https://gorest.co.in/');
+            $response = Http::withToken('f4b1c26aed24de66232605674c51c6f3539c704cc4274ccc5c9883a82a450de7')->put($url.'/users/'.$request->id, [
+                "name"=> $request->name,
+                "email"=> $request->email,
+                "gender"=> $request->gender,
+                "status"=> $request->status
+            ]);
+
+
+        } catch (Exception $e) {
+
+            return $this->error($e);
+
+        }
+
+        return redirect()->route('usuarios.index');
+
     }
 }

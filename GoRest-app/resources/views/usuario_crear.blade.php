@@ -15,3 +15,9 @@
       </select>
     <button type="submit">Guardar</button>
 </form>
+
+<form action="{{ route ('usuarios.index') }}">
+  @csrf
+  <label for="">Vuelve a la pagina principal</label>
+  <button type="submit">Volver</button>
+</form>
