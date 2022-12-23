@@ -13,7 +13,7 @@ class UsuariosController extends Controller
 
         try{
 
-            $url = env('URL_SERVER_API','https://gorest.co.in/');
+            $url = 'https://gorest.co.in/public/v2';
             $response = Http::get($url.'/users');
             $data = $response->json();
             return view('usuarios',compact('data'));
@@ -34,7 +34,7 @@ class UsuariosController extends Controller
 
         try {
 
-            $url = env('URL_SERVER_API','https://gorest.co.in/');
+            $url = 'https://gorest.co.in/public/v2';
             $response = Http::withToken('f4b1c26aed24de66232605674c51c6f3539c704cc4274ccc5c9883a82a450de7')->post($url.'/users',[
                 "name"=> $request->name,
                 "email"=> $request->email,
@@ -71,7 +71,7 @@ class UsuariosController extends Controller
     public function delete($idUser){
         try {
 
-            $url = env('URL_SERVER_API','https://gorest.co.in/');
+            $url = 'https://gorest.co.in/public/v2';
             $response = Http::withToken('f4b1c26aed24de66232605674c51c6f3539c704cc4274ccc5c9883a82a450de7')->delete($url.'/users/'.$idUser);
 
         } catch (Exception $e) {
@@ -86,7 +86,7 @@ class UsuariosController extends Controller
 
         try{
 
-            $url = env('URL_SERVER_API','https://gorest.co.in/');
+            $url = 'https://gorest.co.in/public/v2';
             $response = Http::get($url.'/users/'.$idUser);
             $data = $response->json();
             return view('usuario_modificar', compact('data'));
@@ -106,7 +106,7 @@ class UsuariosController extends Controller
 
         try{
 
-            $url = env('URL_SERVER_API','https://gorest.co.in/');
+            $url = 'https://gorest.co.in/public/v2';
             $response = Http::withToken('f4b1c26aed24de66232605674c51c6f3539c704cc4274ccc5c9883a82a450de7')->put($url.'/users/'.$request->id, [
                 "name"=> $request->name,
                 "email"=> $request->email,
@@ -136,7 +136,7 @@ class UsuariosController extends Controller
 
         try{
 
-            $url = env('URL_SERVER_API','https://gorest.co.in/');
+            $url = 'https://gorest.co.in/public/v2';
             $response = Http::withToken('f4b1c26aed24de66232605674c51c6f3539c704cc4274ccc5c9883a82a450de7')->get($url.'/users?name='.$request->name);
             $data = $response->json();
             return view('usuarios',compact('data'));
@@ -163,7 +163,7 @@ class UsuariosController extends Controller
 
         try{
 
-            $url = env('URL_SERVER_API','https://gorest.co.in/');
+            $url = 'https://gorest.co.in/public/v2';
             $response = Http::withToken('f4b1c26aed24de66232605674c51c6f3539c704cc4274ccc5c9883a82a450de7')->get($url.'/users?email='.$request->email);
             $data = $response->json();
             return view('usuarios',compact('data'));
