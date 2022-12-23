@@ -4,7 +4,7 @@ Pruebas de consumo API Rest
 Para habilitar esta app, seguir los siguinetes paso.
 
 * Clonar el repositorio.
-* Por la terminar acceder al directorio # cd GoRest-app
+* Por la terminar acceder al directorio # cd GoRest/GoRest-app/
 * Por la terminal ejecutar # composer install
 * Copiar archivo .env.example y renombrar a .env
 * Por la terminal ejecutar # php artisan key:generate
