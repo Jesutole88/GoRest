@@ -23,7 +23,7 @@
     <div>
     <center>
         
-        <h1>Lista de Usuarios</h1>
+        <h1>Usuarios</h1>
 
         <table>
             <thead>
