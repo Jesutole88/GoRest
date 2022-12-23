@@ -14,7 +14,6 @@
                 <td><button><a href="{{ route ('usuario.crear') }}">Agregar Usuario</a></button></td>
                 <td><button><a href="{{ route ('usuario.getuser') }}">Ir a Buscar por nombre</a></button></td>
                 <td><button><a href="{{ route ('usuario.getmail') }}">Ir a Buscar por email</a></button></td>
-                {{-- <td><a href="{{ route ('usuarios.index') }}">Principal</a></td> --}}
             </tbody>
         </table>
     </div>
