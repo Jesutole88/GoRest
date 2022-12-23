@@ -13,4 +13,4 @@ Para habilitar esta app, seguir los siguinetes paso.
 La vista principal muestra la lista de los usuarios que entrega la api consumida, en esta tabla se pueden realizar acciones de modificar y eliminar. 
 Luego estan las opciuones de buscar usuario por nombre, email y agregar nuevo usuario. 
 
-# Importante: Los resultados de la busqueda por nombre y mail se entregan en la vista principal. 
+<b>Importante: Los resultados de la busqueda por nombre y mail se entregan en la vista principal. </b>
