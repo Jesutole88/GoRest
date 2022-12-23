@@ -124,4 +124,58 @@ class UsuariosController extends Controller
         return redirect()->route('usuarios.index');
 
     }
+
+    public function getuser(){
+
+        return view('usuario_buscar');
+
+    }
+
+
+    public function getusername(Request $request){
+
+        try{
+
+            $url = env('URL_SERVER_API','https://gorest.co.in/');
+            $response = Http::withToken('f4b1c26aed24de66232605674c51c6f3539c704cc4274ccc5c9883a82a450de7')->get($url.'/users?name='.$request->name);
+            $data = $response->json();
+            return view('usuarios',compact('data'));
+
+
+        } catch (Exception $e) {
+
+            return $this->error($e);
+
+        }
+
+        return view('usuario_name',compact('data'));
+
+    }
+
+    public function getmail(){
+
+        return view('usuario_mail');
+
+    }
+
+
+    public function getusermail(Request $request){
+
+        try{
+
+            $url = env('URL_SERVER_API','https://gorest.co.in/');
+            $response = Http::withToken('f4b1c26aed24de66232605674c51c6f3539c704cc4274ccc5c9883a82a450de7')->get($url.'/users?email='.$request->email);
+            $data = $response->json();
+            return view('usuarios',compact('data'));
+
+
+        } catch (Exception $e) {
+
+            return $this->error($e);
+
+        }
+
+        return view('usuario_name',compact('data'));
+
+    }
 }
