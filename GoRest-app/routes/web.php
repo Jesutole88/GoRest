@@ -7,7 +7,7 @@ use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/',[UsuariosController::class,'index'])->name('usuarios.index');
-Route::get('/usuario',[UsuariosController::class,'create']);
+Route::get('/usuario',[UsuariosController::class,'create'])->name('usuario.crear');
 Route::post('/usuario/store',[UsuariosController::class,'store'])->name('usuario.store');
 Route::get('/usuario/delete/{id}',[UsuariosController::class,'delete'])->name('usuario.delete');
 Route::get('/usuario/modificar/{id}',[UsuariosController::class,'modificar'])->name('usuario.modificar');
