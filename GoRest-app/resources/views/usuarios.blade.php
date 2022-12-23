@@ -7,6 +7,7 @@
             <th>Email</th>
             <th>Sexo</th>
             <th>Estado</th>
+            <th colspan="2">Acción</th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,13 @@
                 <td>{{$user['email']}}</td>
                 <td>{{$user['gender']}}</td>
                 <td>{{$user['status']}}</td>
+                
+                <td>
+                    <a href="{{ route ('usuario.update',$user['id']) }}">Modificar</a>
+                </td>
+                <td>
+                    <a href="{{ route ('usuario.destroy',$user['id']) }}">Eliminar</a>
+                </td>
             </tr>
         @endforeach
     </tbody>
