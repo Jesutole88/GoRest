@@ -22,7 +22,7 @@
                     <a href="{{ route ('usuario.update',$user['id']) }}">Modificar</a>
                 </td>
                 <td>
-                    <a href="{{ route ('usuario.destroy',$user['id']) }}">Eliminar</a>
+                    <a href="{{ route ('usuario.delete',$user['id']) }}">Eliminar</a>
                 </td>
             </tr>
         @endforeach

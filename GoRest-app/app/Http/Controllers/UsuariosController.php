@@ -67,4 +67,23 @@ class UsuariosController extends Controller
         return view('usuario_error',compact('data'));
 
     }
+
+    public function delete($idUser){
+        try {
+
+            $url = env('URL_SERVER_API','https://gorest.co.in/');
+            $response = Http::withToken('f4b1c26aed24de66232605674c51c6f3539c704cc4274ccc5c9883a82a450de7')->delete($url.'/users/'.$idUser);
+
+        } catch (Exception $e) {
+
+            return $this->error($e);
+
+        }
+        return redirect()->route('usuarios.index');
+
+    }
+
+    public function update($idUser){
+        dd($idUser);
+    }
 }
